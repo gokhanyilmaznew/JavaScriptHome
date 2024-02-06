@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --colorDark: rgb(35, 35, 35);
+            --colorLight: rgb(216, 216, 216);
+        }
+
+        button {
+            background-color: var(--colorDark);
+            color: var(--colorLight);
+        }
+
+        body.dark {
+            background-color: rgb(35, 35, 35);
+            color: rgb(216, 216, 216);
+        }
+
+        body.dark button {
+            background-color: var(--colorLight);
+            color: var(--colorDark);
+        }
+    </style>
+
+</head>
+
+<body>
+    <button onclick="setMode()" id="btnMode">Dark</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo asperiores fuga labore blanditiis porro excepturi,
+        fugiat a pariatur molestiae non? Non, consequuntur corrupti quos molestiae sed itaque facilis vel cum?</p>
+
+    <script>
+        let mode = "light";
+
+        function setMode() {
+            document.querySelector("#btnMode").innerHTML=mode
+            if (mode === "Light") {
+                document.querySelector("body").classList.add("dark");
+                mode = "Dark";
+            }
+            else {
+                document.querySelector("body").classList.remove("dark");
+                mode="Light";
+            }
+           
+        }
+
+    </script>
+
+</body>
+
+</html>
